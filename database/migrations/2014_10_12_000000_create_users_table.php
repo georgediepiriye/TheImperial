@@ -22,6 +22,7 @@ class CreateUsersTable extends Migration
             $table->rememberToken();
             $table->foreignId('current_team_id')->nullable();
             $table->text('profile_photo_path')->nullable();
+            $table->string('utype')->default('USR')->comment('ADM for admin and USR for users');
             $table->timestamps();
         });
     }

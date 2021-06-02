@@ -43,28 +43,28 @@
                         <div id="offer-box" class="carouselTicker">
                             <ul class="offer-box">
                                 <li>
-                                    <i class="fab fa-opencart"></i> Off 10%! Shop Now Man
+                                    <i class="fab fa-opencart"></i> Off 10%! Shop Now Sofa
                                 </li>
                                 <li>
-                                    <i class="fab fa-opencart"></i> 50% - 80% off on Fashion
-                                </li>
-                                <li>
-                                    <i class="fab fa-opencart"></i> 20% off Entire Purchase Promo code: offT20
-                                </li>
-                                <li>
-                                    <i class="fab fa-opencart"></i> Off 50%! Shop Now
-                                </li>
-                                <li>
-                                    <i class="fab fa-opencart"></i> Off 10%! Shop Now Man
-                                </li>
-                                <li>
-                                    <i class="fab fa-opencart"></i> 50% - 80% off on Fashion
+                                    <i class="fab fa-opencart"></i> 50% - 80% off on Chairs
                                 </li>
                                 <li>
                                     <i class="fab fa-opencart"></i> 20% off Entire Purchase Promo code: offT20
                                 </li>
                                 <li>
-                                    <i class="fab fa-opencart"></i> Off 50%! Shop Now
+                                    <i class="fab fa-opencart"></i> Off 50%! Shop Now Sofa
+                                </li>
+                                <li>
+                                    <i class="fab fa-opencart"></i> Off 10%! Shop Now Sofa
+                                </li>
+                                <li>
+                                    <i class="fab fa-opencart"></i> 50% - 80% off on Chairs
+                                </li>
+                                <li>
+                                    <i class="fab fa-opencart"></i> 20% off Entire Purchase Promo code: offT20
+                                </li>
+                                <li>
+                                    <i class="fab fa-opencart"></i> Off 50%! Shop Now Sofa
                                 </li>
                             </ul>
                         </div>
@@ -72,21 +72,52 @@
                 </div>
                 <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                     <div class="custom-select-box">
-                        <select id="basic" class="selectpicker show-tick form-control" data-placeholder="$ USD">
-						<option>$ USD</option>
-						<option>€ EUR</option>
-					</select>
+                        <select id="basic" class="selectpicker show-tick form-control" data-plaopceholder="₦ NGN">
+                            <option>₦ NGN</option>
+                            <option>$ USD</option>
+                            <option>€ EUR</option>
+					   </select>
                     </div>
                     <div class="right-phone-box">
                         <p>Call US :- <a href="#"> +2348066738338</a></p>
                     </div>
-                    <div class="our-link">
-                        <ul>
-                            <li><a href="#">My Account</a></li>
-                            <li><a href="#">Our location</a></li>
-                            <li><a href="#">Contact Us</a></li>
-                        </ul>
-                    </div>
+                    
+                    @if (Route::has('login'))
+                        @auth
+                            @if (Auth::user()->utype==='ADM')
+                                <div class="custom-select-box">
+                                    <select id="basic" class="selectpicker form-control">
+                                        <option><a href="#"> My Account({{ Auth::user()->name }})</a></option>
+                                        <option><a href="#"> Dashboard</a></option>
+                                        
+                                    </select>
+                                </div>
+
+                            @else
+                                <div class="custom-select-box">
+                                    <select id="basic" class="selectpicker form-control">
+                                        <option><a href="#"> My Account({{ Auth::user()->name }})</a></option>
+                                        <option><a href="#"> Dashboard</a></option>
+                                        
+                                    </select>
+                                </div>
+
+                                
+                            @endif
+                            
+                        
+                        @else
+                            <div class="our-link">
+                                <ul>
+                                    <li><a href="{{ route('login') }}">Login</a></li>
+                                    <li><a href="{{ route('register') }}">Register</a></li>
+                                
+                                </ul>
+                            </div>
+
+                        @endauth
+                       
+                    @endif
                 </div>
             </div>
         </div>
