@@ -71,37 +71,41 @@
                     </div>
                 </div>
                 <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                    <div class="custom-select-box">
-                        <select id="basic" class="selectpicker show-tick form-control" data-plaopceholder="₦ NGN">
-                            <option>₦ NGN</option>
-                            <option>$ USD</option>
-                            <option>€ EUR</option>
-					   </select>
-                    </div>
-                    <div class="right-phone-box">
-                        <p>Call US :- <a href="#"> +2348066738338</a></p>
-                    </div>
+                 
                     
                     @if (Route::has('login'))
                         @auth
                             @if (Auth::user()->utype==='ADM')
-                                <div class="custom-select-box">
-                                    <select id="basic" class="selectpicker form-control">
-                                        <option><a href="#"> My Account({{ Auth::user()->name }})</a></option>
-                                        <option><a href="#"> Dashboard</a></option>
-                                        
-                                    </select>
-                                </div>
+                                <div class="custom-select-box" >
+                                    <li class="dropdown">
+                                        <a href="#" class="nav-link dropdown-toggle arrow" data-toggle="dropdown" style="color: white !important">{{ Str::ucfirst(Auth::user()->name ) }}</a>
+                                        <ul class="dropdown-menu">
+                                            <li><a href="{{ route('admin.dashboard') }}" style="color: black !important">Dashboard</a></li>
+                                            <li><a href="{{ route('logout') }}" style="color: black !important" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a></li>
+                                            <form  id="logout-form" action="{{ route('logout') }}" method="POST">
+                                                @csrf 
+                                            </form>
+                                            
+                                        </ul>
+                                    </li>
 
+                                </div>
+                
                             @else
-                                <div class="custom-select-box">
-                                    <select id="basic" class="selectpicker form-control">
-                                        <option><a href="#"> My Account({{ Auth::user()->name }})</a></option>
-                                        <option><a href="#"> Dashboard</a></option>
-                                        
-                                    </select>
-                                </div>
+                            <div class="custom-select-box" >
+                                <li class="dropdown">
+                                    <a href="#" class="nav-link dropdown-toggle arrow" data-toggle="dropdown" style="color: white !important">{{ Str::ucfirst(Auth::user()->name ) }}</a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="{{ route('user.dashboard') }}" style="color: black !important">Dashboard</a></li>
+                                        <li><a href="{{ route('logout') }}" style="color: black !important" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a></li>
+                                            <form  id="logout-form" action="{{ route('logout') }}" method="POST">
+                                                @csrf 
+                                            </form>
+                                    </ul>
+                                </li>
 
+                            </div>
+            
                                 
                             @endif
                             
