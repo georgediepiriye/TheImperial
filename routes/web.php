@@ -25,6 +25,17 @@ use Illuminate\Support\Facades\Route;
  Route::get('/shop',ShopComponent::class)->name('shop');
  Route::get('/cart',CartComponent::class)->name('cart');
  Route::get('/checkout',CheckoutComponeent::class)->name('checkout');
-Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
-    return view('dashboard');
-})->name('dashboard');
+
+// Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
+//     return view('dashboard');
+// })->name('dashboard');
+
+//for user
+Route::middleware(['auth:sanctum', 'verified'])->group(function(){
+
+});
+
+//for admin
+Route::middleware(['auth:sanctum', 'verified'])->group(function(){
+
+});
