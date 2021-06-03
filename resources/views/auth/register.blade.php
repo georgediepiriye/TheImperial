@@ -29,9 +29,9 @@
                       </div>
 
                       <div class="form-label-group">
-                        <input type="password" id="inputPassword" name="password_confirmation" class="form-control" placeholder="*********" required autocomplete="new-password">
-                        <label for="inputPassword">Confirm Password</label>
-                      </div> 
+                        <input type="password" id="inputConfirmPassword" name="password_confirmation" class="form-control" placeholder="********" required autocomplete="new-password">
+                        <label for="inputConfirmPassword">Confirm Password</label>
+                      </div>
                       <button class="btn btn-lg btn-primary btn-block btn-login text-uppercase font-weight-bold mb-2" type="submit">Register</button>
                       
                     </form>

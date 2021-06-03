@@ -50,7 +50,7 @@
 <div class="categories-shop">
     <div class="container">
         <div class="title-all text-center">
-            <h1>Our Products</h1>
+            <h1>Our Products Categories</h1>
         </div>
        
         <div class="row">
@@ -89,13 +89,6 @@
                     <a class="btn hvr-hover" href="#">Lightening</a>
                 </div>
                
-            </div>
-            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-                <div class="shop-cat-box">
-                    <img class="img-fluid" src="{{ asset('assets/images/banner-03.jpg') }}" alt="" />
-                    <a class="btn hvr-hover" href="#">Decore</a>
-                </div>
-             
             </div>
             
         </div>

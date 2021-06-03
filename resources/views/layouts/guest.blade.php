@@ -105,8 +105,8 @@
                                     <li class="dropdown">
                                         <a href="#" class="nav-link dropdown-toggle arrow" data-toggle="dropdown" style="color: white !important">{{ Str::ucfirst(Auth::user()->name ) }}</a>
                                         <ul class="dropdown-menu">
-                                            <li><a href="{{ route('admin.dashboard') }}" style="color: black !important">Dashboard</a></li>
-                                            <li><a href="{{ route('logout') }}" style="color: black !important" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a></li>
+                                            <li><a href="{{ route('admin.dashboard') }}">Dashboard</a></li>
+                                            <li><a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a></li>
                                             <form  id="logout-form" action="{{ route('logout') }}" method="POST">
                                                 @csrf 
                                             </form>
@@ -121,9 +121,9 @@
                                 <li class="dropdown">
                                     <a href="#" class="nav-link dropdown-toggle arrow" data-toggle="dropdown" style="color: white !important">{{ Str::ucfirst(Auth::user()->name ) }}</a>
                                     <ul class="dropdown-menu">
-                                        <li><a href="{{ route('user.dashboard') }}" style="color: black !important">Dashboard</a></li>
-                                        <li><a href="{{ route('logout') }}" style="color: black !important" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a></li>
-                                            <form  id="logout-form" action="{{ route('logout') }}" method="POST">
+                                        <li><a href="{{ route('user.dashboard')}}">Dashboard</a></li>
+                                        <li><a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a></li>
+                                            <form id="logout-form" action="{{ route('logout') }}" method="POST">
                                                 @csrf 
                                             </form>
                                     </ul>
@@ -172,14 +172,13 @@
                     <ul class="nav navbar-nav ml-auto" data-in="fadeInDown" data-out="fadeOutUp">
                         <li class="nav-item active"><a class="nav-link" href="/">Home</a></li>
                          <li class="dropdown">
-                            <a href="#" class="nav-link dropdown-toggle arrow" data-toggle="dropdown">Products</a>
+                            <a href="#" class="nav-link dropdown-toggle arrow" data-toggle="dropdown">Categories</a>
                             <ul class="dropdown-menu">
                                 <li><a href="cart.html">Sofa</a></li>
                                 <li><a href="checkout.html">Table</a></li>
                                 <li><a href="my-account.html">Chair</a></li>
                                 <li><a href="wishlist.html">Bed</a></li>
                                 <li><a href="shop-detail.html">Lightening</a></li>
-                                <li><a href="wishlist.html">Decore</a></li>
                             </ul>
                         </li>
                         <li class="nav-item"><a class="nav-link" href="{{ route('shop') }}">Shop</a></li>
