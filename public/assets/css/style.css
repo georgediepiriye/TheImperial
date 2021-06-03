@@ -2453,6 +2453,30 @@
   }
 
   
+  
+  .pagination a {
+    color: black;
+    float: left;
+    padding: 8px 16px;
+    
+  }
+  
+  .pagination a.active {
+    background-color: #d33b33 !important;
+    color: white;
+  }
+
+  .pagination .active{
+      color: #d33b33 ;
+    background-color: #d33b33 !important;
+  }
+ 
+
+  .pagination a:hover:not(.active) {background-color: #ddd;}
+  
+
+
+  
   /* Fallback for Edge
   -------------------------------------------------- */
   
