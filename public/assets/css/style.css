@@ -1849,31 +1849,35 @@
  .coupon-box .input-group .input-group-append .btn-theme:hover {
      background: #d33b33;
 }
- .update-box input[type="submit"]{
-     background: #010101;
-     border: medium none;
-     border-radius: 0;
-     -webkit-box-shadow: none;
-     box-shadow: none;
-     color: #fff;
-     display: inline-block;
-     float: right;
-     cursor: pointer;
-     font-size: 16px;
-     font-weight: 500;
-     height: 50px;
-     line-height: 40px;
-     margin-right: 15px;
-     padding: 0 20px;
-     text-shadow: none;
-     text-transform: uppercase;
-     -webkit-transition: all 0.3s ease 0s;
-     transition: all 0.3s ease 0s;
-     white-space: nowrap;
-     width: inherit;
+
+
+.update-box a{
+    background: #010101;
+    border: medium none;
+    border-radius: 0;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    color: #fff;
+    display: inline-block;
+    float: right;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 500;
+    height: 50px;
+    line-height: 40px;
+    margin-right: 15px;
+    padding: 7px 20px;
+    text-shadow: none;
+    text-transform: uppercase;
+    -webkit-transition: all 0.3s ease 0s;
+    transition: all 0.3s ease 0s;
+    white-space: nowrap;
+    width: inherit;
 }
- .update-box input[type="submit"]:hover{
-     background: #d33b33;
+
+
+.update-box a:hover{
+    background: #d33b33;
 }
  .order-box h3{
      font-size: 16px;

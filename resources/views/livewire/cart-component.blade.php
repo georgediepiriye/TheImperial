@@ -51,9 +51,7 @@
                                             <p>₦{{ number_format($item->subtotal)  }}</p>
                                         </td>
                                         <td class="remove-pr">
-                                            <a href="#">
-                                            <i class="fas fa-times"></i>
-                                            </a>
+                                            <a href="#"><i class="fas fa-times" wire:click.prevent="removeItem('{{ $item->rowId }}')"></i> </a>
                                         </td>
                                     </tr>
                                     
@@ -71,7 +69,7 @@
         </div>
 
         <div class="row my-5">
-            <div class="col-lg-6 col-sm-6">
+            <div class="col-lg-4 col-sm-4">
                 <div class="coupon-box">
                     <div class="input-group input-group-sm">
                         <input class="form-control" placeholder="Enter your coupon code" aria-label="Coupon code" type="text">
@@ -81,9 +79,14 @@
                     </div>
                 </div>
             </div>
-            <div class="col-lg-6 col-sm-6">
+            <div class="col-lg-4 col-sm-4">
                 <div class="update-box">
-                    <input value="Update Cart" type="submit">
+                    <a href="">Update Cart</a>
+                </div>
+            </div>
+            <div class="col-lg-4 col-sm-4">
+                <div class="update-box">
+                    <a href="" wire:click.prevent='clearCart()'>Clear Shopping Cart</a>
                 </div>
             </div>
         </div>

@@ -21,6 +21,19 @@ class CartComponent extends Component
         Cart::update($rowId,$qty);
     }
 
+    //function to remove single item from cart
+    public function removeItem($rowId){
+        Cart::remove($rowId);
+        session()->flash('message','Item has been deleted!');
+
+    }
+
+    //function to clear all cart items
+    public function clearCart(){
+        Cart::destroy();
+        session()->flash('message','All items removed Successfully!');
+    }
+
 
 
     public function render()
