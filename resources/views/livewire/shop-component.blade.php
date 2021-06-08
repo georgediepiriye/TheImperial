@@ -1,4 +1,4 @@
-
+<main>
  <div class="all-title-box">
     <div class="container">
         <div class="row">
@@ -163,7 +163,7 @@
                                                         <li><a href="{{ route('product.details',['slug'=>$product->slug]) }}" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
                                                         <li><a href="#" data-toggle="tooltip" data-placement="right" title="Add to Wishlist"><i class="far fa-heart"></i></a></li>
                                                     </ul>
-                                                    <a class="cart" href="#">Add to Cart</a>
+                                                    <a class="cart" href="#"  wire:click.prevent="store({{ $product->id}},'{{ $product->name }}',{{ $product->regular_price }})">Add to Cart</a>
                                                 </div>
                                             </div>
                                             <div class="why-text">
@@ -192,5 +192,4 @@
         </div>
     </div>
 </div>
-
-<!-- End Shop Page -->
+</main>

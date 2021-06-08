@@ -1,96 +1,67 @@
- 
+ <main>
  <div class="cart-box-main">
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
-                <div class="table-main table-responsive">
-                    <table class="table">
-                        <thead>
-                            <tr>
-                                <th>Images</th>
-                                <th>Product Name</th>
-                                <th>Price</th>
-                                <th>Quantity</th>
-                                <th>Total</th>
-                                <th>Remove</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td class="thumbnail-img">
-                                    <a href="#">
-                                <img class="img-fluid" src="images/img-pro-01.jpg" alt="" />
-                            </a>
-                                </td>
-                                <td class="name-pr">
-                                    <a href="#">
-                                Lorem ipsum dolor sit amet
-                            </a>
-                                </td>
-                                <td class="price-pr">
-                                    <p>$ 80.0</p>
-                                </td>
-                                <td class="quantity-box"><input type="number" size="4" value="1" min="0" step="1" class="c-input-text qty text"></td>
-                                <td class="total-pr">
-                                    <p>$ 80.0</p>
-                                </td>
-                                <td class="remove-pr">
-                                    <a href="#">
-                                <i class="fas fa-times"></i>
-                            </a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="thumbnail-img">
-                                    <a href="#">
-                                <img class="img-fluid" src="images/img-pro-02.jpg" alt="" />
-                            </a>
-                                </td>
-                                <td class="name-pr">
-                                    <a href="#">
-                                Lorem ipsum dolor sit amet
-                            </a>
-                                </td>
-                                <td class="price-pr">
-                                    <p>$ 60.0</p>
-                                </td>
-                                <td class="quantity-box"><input type="number" size="4" value="1" min="0" step="1" class="c-input-text qty text"></td>
-                                <td class="total-pr">
-                                    <p>$ 80.0</p>
-                                </td>
-                                <td class="remove-pr">
-                                    <a href="#">
-                                <i class="fas fa-times"></i>
-                            </a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="thumbnail-img">
-                                    <a href="#">
-                                <img class="img-fluid" src="images/img-pro-03.jpg" alt="" />
-                            </a>
-                                </td>
-                                <td class="name-pr">
-                                    <a href="#">
-                                Lorem ipsum dolor sit amet
-                            </a>
-                                </td>
-                                <td class="price-pr">
-                                    <p>$ 30.0</p>
-                                </td>
-                                <td class="quantity-box"><input type="number" size="4" value="1" min="0" step="1" class="c-input-text qty text"></td>
-                                <td class="total-pr">
-                                    <p>$ 80.0</p>
-                                </td>
-                                <td class="remove-pr">
-                                    <a href="#">
-                                <i class="fas fa-times"></i>
-                            </a>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
+                @if (Session::has('message'))
+                    <div class="alert alert-success">
+                        <strong>{{Session::get('message')}}</strong>
+
+                    </div>
+                   
+                    
+                @endif
+
+                @if (Cart::count() > 0)
+                    <div class="table-main table-responsive">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Images</th>
+                                    <th>Product Name</th>
+                                    <th>Price</th>
+                                    <th>Quantity</th>
+                                    <th>Total</th>
+                                    <th>Remove</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (Cart::content() as $item )
+                                    <tr>
+                                        <td class="thumbnail-img">
+                                            <a href="{{ route('product.details',['slug'=>$item->model->slug]) }}">
+                                                <img class="img-fluid" src="assets/images/{{ $item->model->image }}" alt="" />
+                                            </a>
+                                        </td>
+                                        <td class="name-pr">
+                                            <a href="{{ route('product.details',['slug'=>$item->model->slug]) }}">
+                                                 {{Str::ucfirst($item->model->name ) }}
+                                            </a>
+                                        </td>
+                                        <td class="price-pr">
+                                            <p>₦{{ number_format($item->model->regular_price) }}</p>
+                                        </td>
+                                        <td class="quantity-box"><input type="number" size="4" value="{{ $item->qty }}" min="0" step="1" class="c-input-text qty text"></td>
+                                        <td class="total-pr">
+                                            <p>₦{{ number_format($item->subtotal)  }}</p>
+                                        </td>
+                                        <td class="remove-pr">
+                                            <a href="#">
+                                            <i class="fas fa-times"></i>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                    
+                                @endforeach
+                                
+                               
+                               
+                            </tbody>
+                        </table>
+                    </div>
+                @else
+                    <p>No item in Cart</p>
+                @endif
             </div>
         </div>
 
@@ -119,20 +90,14 @@
                     <h3>Order summary</h3>
                     <div class="d-flex">
                         <h4>Sub Total</h4>
-                        <div class="ml-auto font-weight-bold"> $ 130 </div>
+                        <div class="ml-auto font-weight-bold">₦{{ Cart::subtotal() }} </div>
                     </div>
-                    <div class="d-flex">
-                        <h4>Discount</h4>
-                        <div class="ml-auto font-weight-bold"> $ 40 </div>
-                    </div>
+                    
                     <hr class="my-1">
-                    <div class="d-flex">
-                        <h4>Coupon Discount</h4>
-                        <div class="ml-auto font-weight-bold"> $ 10 </div>
-                    </div>
+          
                     <div class="d-flex">
                         <h4>Tax</h4>
-                        <div class="ml-auto font-weight-bold"> $ 2 </div>
+                        <div class="ml-auto font-weight-bold"> ₦{{ Cart::tax() }}</div>
                     </div>
                     <div class="d-flex">
                         <h4>Shipping Cost</h4>
@@ -141,7 +106,7 @@
                     <hr>
                     <div class="d-flex gr-total">
                         <h5>Grand Total</h5>
-                        <div class="ml-auto h5"> $ 388 </div>
+                        <div class="ml-auto h5"> ₦ {{Cart::total()}} </div>
                     </div>
                     <hr> </div>
             </div>
@@ -150,4 +115,4 @@
 
     </div>
 </div>
-<!-- End Cart -->
+</main>

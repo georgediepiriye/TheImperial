@@ -157,7 +157,7 @@
                             </ul>
                         </li>
                         <li class="nav-item"><a class="nav-link" href="{{ route('shop') }}">Shop</a></li>
-                        <li class="nav-item"><a class="nav-link" href="{{ route('cart') }}">Cart</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{{ route('product.cart') }}">Cart</a></li>
                         <li class="nav-item"><a class="nav-link" href="{{ route('checkout') }}">Checkout</a></li>
                         
                         <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
@@ -174,7 +174,7 @@
                         <li class="search"><a href="#"><i class="fa fa-search"></i></a></li>
                         <li class="side-menu"><a href="#">
 						<i class="fa fa-shopping-bag"></i>
-                            <span class="badge">3</span>
+                            <span class="badge">{{ Cart::count() }}</span>
 					</a></li>
                     </ul>
                 </div>
@@ -185,24 +185,17 @@
                 <a href="#" class="close-side"><i class="fa fa-times"></i></a>
                 <li class="cart-box">
                     <ul class="cart-list">
-                        <li>
-                            <a href="#" class="photo"><img src="images/img-pro-01.jpg" class="cart-thumb" alt="" /></a>
-                            <h6><a href="#">Delica omtantur </a></h6>
-                            <p>1x - <span class="price">$80.00</span></p>
-                        </li>
-                        <li>
-                            <a href="#" class="photo"><img src="images/img-pro-02.jpg" class="cart-thumb" alt="" /></a>
-                            <h6><a href="#">Omnes ocurreret</a></h6>
-                            <p>1x - <span class="price">$60.00</span></p>
-                        </li>
-                        <li>
-                            <a href="#" class="photo"><img src="images/img-pro-03.jpg" class="cart-thumb" alt="" /></a>
-                            <h6><a href="#">Agam facilisis</a></h6>
-                            <p>1x - <span class="price">$40.00</span></p>
-                        </li>
+                        @foreach (Cart::content() as $item )
+                            <li>
+                                <a href="{{ route('product.details',['slug'=>$item->model->slug]) }}" class="photo"><img src="{{asset('assets/images')}}/{{ $item->model->image }}"  class="cart-thumb" alt="" /></a>
+                                <h6><a href="{{ route('product.details',['slug'=>$item->model->slug]) }}">{{ $item->model->name }}</a></h6>
+                                <p>{{ $item->qty }}x - <span class="price">₦{{ number_format($item->model->regular_price) }}</span></p>
+                            </li>
+                            
+                        @endforeach
                         <li class="total">
-                            <a href="#" class="btn btn-default hvr-hover btn-cart">VIEW CART</a>
-                            <span class="float-right"><strong>Total</strong>: $180.00</span>
+                            <a href="{{ route('product.cart') }}" class="btn btn-default hvr-hover btn-cart">VIEW CART</a>
+                            <span class="float-right"><strong>Total</strong>₦ {{Cart::total()}} </span>
                         </li>
                     </ul>
                 </li>
