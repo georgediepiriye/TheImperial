@@ -46,7 +46,7 @@
                                 <div class="price-box-bar">
                                     <div class="cart-and-bay-btn">
                                         <a class="btn hvr-hover" data-fancybox-close="" href="#">Buy New</a>
-                                        <a class="btn hvr-hover" data-fancybox-close="" href="#" wire::click.prevent="store({{ $product->id }},'{{ $product->name }}',{{ $product->regular_price }})">Add to cart</a>
+                                        <a class="btn hvr-hover" data-fancybox-close="" href="#" wire:click.prevent="store({{ $product->id}},'{{ $product->name }}',{{ $product->regular_price }})">Add to cart</a>
                                     </div>
                                 </div>
 

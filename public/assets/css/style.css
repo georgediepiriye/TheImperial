@@ -565,8 +565,7 @@
      border: solid 1px #e0e0e0;
      left: auto;
 }
- .btn-cart{
-}
+ 
  .cart-list h6 a{
      font-size: 16px;
      font-weight: 700;
@@ -2284,7 +2283,7 @@
      color: #ffffff;
 }
  .quantity-box input{
-     width: 100%;
+     width: 50%;
 }
  .price-box-bar{
      margin-bottom: 30px;
@@ -2307,8 +2306,7 @@
      color: #ffffff;
      border: none;
 }
- .share-bar{
-}
+
  .share-bar a {
      background: #d33b33;
      color: #ffffff;
@@ -2317,10 +2315,7 @@
      width: 34px;
      text-align: center;
 }
- .share-bar a {
-}
- .featured-products-box{
-}
+
  .featured-products-box .owl-nav{
      position: absolute;
      margin: 0 auto;
@@ -2474,6 +2469,18 @@
 
   .pagination a:hover:not(.active) {background-color: #ddd;}
   
+  .btn-reduce{
+      background-color: rgb(228, 222, 222);
+  }
+  .btn-reduce :hover{
+      background-color: #d33b33 !important;
+  }
+  .btn-increase{
+    background-color: rgb(228, 222, 222);
+}
+.btn-increase :hover{
+    background-color: #d33b33 !important;
+}
 
 
   

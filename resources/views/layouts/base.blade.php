@@ -174,7 +174,11 @@
                         <li class="search"><a href="#"><i class="fa fa-search"></i></a></li>
                         <li class="side-menu"><a href="#">
 						<i class="fa fa-shopping-bag"></i>
-                            <span class="badge">{{ Cart::count() }}</span>
+                             @if (Cart::count()>0)
+                                <span class="badge">{{ Cart::count() }}</span>
+                                 
+                             @endif
+                            
 					</a></li>
                     </ul>
                 </div>

@@ -41,7 +41,12 @@
                                         <td class="price-pr">
                                             <p>₦{{ number_format($item->model->regular_price) }}</p>
                                         </td>
-                                        <td class="quantity-box"><input type="number" size="4" value="{{ $item->qty }}" min="0" step="1" class="c-input-text qty text"></td>
+                                        <td class="quantity-box">
+                                            <a href="" class="btn btn-reduce" wire:click.prevent="decreaseQuantity('{{ $item->rowId }}')">-</a>
+                                            <input type="text" value="{{ $item->qty }}" data-max='120' pattern="[0-9">
+                                            <a href="" class="btn btn-increase" wire:click.prevent="increaseQuantity('{{ $item->rowId }}')">+</a>
+                                           
+                                        </td>
                                         <td class="total-pr">
                                             <p>₦{{ number_format($item->subtotal)  }}</p>
                                         </td>
@@ -100,7 +105,7 @@
                         <div class="ml-auto font-weight-bold"> ₦{{ Cart::tax() }}</div>
                     </div>
                     <div class="d-flex">
-                        <h4>Shipping Cost</h4>
+                        <h4>Delivery Cost</h4>
                         <div class="ml-auto font-weight-bold"> Free </div>
                     </div>
                     <hr>
