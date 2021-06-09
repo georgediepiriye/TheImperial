@@ -55,94 +55,32 @@
                             </p>
                         </div>
                     </div>
-                    <div class="filter-brand-left">
-                        <div class="title-left">
-                            <h3>Brand</h3>
-                        </div>
-                        <div class="brand-box">
-                            <ul>
-                                <li>
-                                    <div class="radio radio-danger">
-                                        <input name="survey" id="Radios1" value="Yes" type="radio">
-                                        <label for="Radios1"> Supreme </label>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="radio radio-danger">
-                                        <input name="survey" id="Radios2" value="No" type="radio">
-                                        <label for="Radios2"> A Bathing Ape </label>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="radio radio-danger">
-                                        <input name="survey" id="Radios3" value="declater" type="radio">
-                                        <label for="Radios3"> The Hundreds </label>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="radio radio-danger">
-                                        <input name="survey" id="Radios4" value="declater" type="radio">
-                                        <label for="Radios4"> Alife </label>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="radio radio-danger">
-                                        <input name="survey" id="Radios5" value="declater" type="radio">
-                                        <label for="Radios5"> Neighborhood </label>
-                                    </div>
-                                </li>
-                               
-                               
-                                <li>
-                                    <div class="radio radio-danger">
-                                        <input name="survey" id="Radios8" value="declater" type="radio">
-                                        <label for="Radios8"> UNDFTD </label>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="radio radio-danger">
-                                        <input name="survey" id="Radios9" value="declater" type="radio">
-                                        <label for="Radios9"> Mighty Healthy </label>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="radio radio-danger">
-                                        <input name="survey" id="Radios10" value="declater" type="radio">
-                                        <label for="Radios10"> Fiberops </label>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
+                   
 
                 </div>
             </div>
             <div class="col-xl-9 col-lg-9 col-sm-12 col-xs-12 shop-content-right">
                 <div class="right-product-box">
                     <div class="product-item-filter row">
-                        <div class="col-12 col-sm-8 text-center text-sm-left">
+                        <div class="col-12 col-sm-12 text-center text-sm-left">
                             <div class="toolbar-sorter-right">
                                 <span>Sort by </span>
-                                <select id="basic" class="selectpicker show-tick form-control" data-placeholder="$ USD">
-                                <option data-display="Select">Nothing</option>
-                                <option value="1">Popularity</option>
-                                <option value="2">High Price → High Price</option>
-                                <option value="3">Low Price → High Price</option>
-                                <option value="4">Best Selling</option>
-                            </select>
+
+                                <div wire:ignore >
+                                    <select id="basic" class="selectpicker show-tick form-control" wire:model='sorting' >
+                                        <option value="default" data-display="Select">Nothing</option>
+                                        <option value="price_desc">High Price → Low Price</option>
+                                        <option value="price">Low Price → High Price</option>
+                                        <option value="date">Newness</option>  
+                                    </select>
+
+                                </div>
+                                
+                                
                             </div>
-                            <p>Showing all 4 results</p>
+                           
                         </div>
-                        <div class="col-12 col-sm-4 text-center text-sm-right">
-                            <ul class="nav nav-tabs ml-auto">
-                                <li>
-                                    <a class="nav-link active" href="#grid-view" data-toggle="tab"> <i class="fa fa-th"></i> </a>
-                                </li>
-                                <li>
-                                    <a class="nav-link" href="#list-view" data-toggle="tab"> <i class="fa fa-list-ul"></i> </a>
-                                </li>
-                            </ul>
-                        </div>
+                
                     </div>
 
                     <div class="row product-categorie-box">
