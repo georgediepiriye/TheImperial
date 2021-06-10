@@ -147,13 +147,13 @@
                     <ul class="nav navbar-nav ml-auto" data-in="fadeInDown" data-out="fadeOutUp">
                         <li class="nav-item active"><a class="nav-link" href="/">Home</a></li>
                          <li class="dropdown">
-                            <a href="#" class="nav-link dropdown-toggle arrow" data-toggle="dropdown">Categories</a>
+                            <a href="#" class="nav-link dropdown-toggle " data-toggle="dropdown">Categories</a>
                             <ul class="dropdown-menu">
-                                <li><a href="cart.html">Sofa</a></li>
-                                <li><a href="checkout.html">Table</a></li>
-                                <li><a href="my-account.html">Chair</a></li>
-                                <li><a href="wishlist.html">Bed</a></li>
-                                <li><a href="shop-detail.html">Lightening</a></li>
+                                <li><a href="{{ route('product.category','sofa') }}">Sofa</a></li>
+                                <li><a href="{{ route('product.category','table') }}">Table</a></li>
+                                <li><a href="{{ route('product.category','chair') }}">Chair</a></li>
+                                <li><a href="{{ route('product.category','bed') }}">Bed</a></li>
+                                <li><a href="{{ route('product.category','lightening') }}">Lightening</a></li>
                             </ul>
                         </li>
                         <li class="nav-item"><a class="nav-link" href="{{ route('shop') }}">Shop</a></li>

@@ -31,13 +31,12 @@
                             <h3>Categories</h3>
                         </div>
                         <div class="list-group list-group-collapse list-group-sm list-group-tree" id="list-group-men" data-children=".sub-men">
-                          
-                            <a class="list-group-item list-group-item-action" href="#sub-men1" data-toggle="collapse" aria-expanded="true" aria-controls="sub-men1">Sofa</a>
-                            <a class="list-group-item list-group-item-action" href="#sub-men1" data-toggle="collapse" aria-expanded="true" aria-controls="sub-men1">Table</a>
-                            <a class="list-group-item list-group-item-action" href="#sub-men1" data-toggle="collapse" aria-expanded="true" aria-controls="sub-men1">Chair</a>
-                            <a class="list-group-item list-group-item-action" href="#sub-men1" data-toggle="collapse" aria-expanded="true" aria-controls="sub-men1">Bed</a>
-                            <a class="list-group-item list-group-item-action" href="#sub-men1" data-toggle="collapse" aria-expanded="true" aria-controls="sub-men1">Lightening</a>
-                          
+                         
+
+                            @foreach ($categories as $category)
+                                <a class="list-group-item list-group-item-action" href="{{ route('product.category',['category_slug'=>$category->slug]) }}">{{ Str::ucfirst($category->name)}}</a>   
+                            @endforeach
+                            
                         </div>     
                               
                             
