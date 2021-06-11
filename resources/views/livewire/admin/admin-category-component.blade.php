@@ -12,8 +12,19 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="panel panel-default">
-                    <div class="panel-heading">
-                        All Categories
+                    <div class="panel-heading" style="padding: 30px 0px;">
+                        <div class="row" >
+                            <div class="col-md-6">
+                                All Categories
+
+                            </div>
+                            <div class="col-md-6" style="text-align: right;">
+                                <a href="{{ route('admin.addcategory') }}" class="btn btn-success pull-right">Add New</a>
+
+                            </div>
+
+                        </div>
+                       
                     </div>
                     <div class="panel-body">
                         <table class="table table-striped">
