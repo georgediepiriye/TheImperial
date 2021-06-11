@@ -1,27 +1,3 @@
-{{-- <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="csrf-token" content="{{ csrf_token() }}">
-
-        <title>{{ config('app.name', 'Laravel') }}</title>
-
-        <!-- Fonts -->
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap">
-
-        <!-- Styles -->
-        <link rel="stylesheet" href="{{ mix('css/app.css') }}">
-
-        <!-- Scripts -->
-        <script src="{{ mix('js/app.js') }}" defer></script>
-    </head>
-    <body>
-        <div class="font-sans text-gray-900 antialiased">
-            {{ $slot }}
-        </div>
-    </body>
-</html> --}}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -106,6 +82,7 @@
                                         <a href="#" class="nav-link dropdown-toggle arrow" data-toggle="dropdown" style="color: white !important">{{ Str::ucfirst(Auth::user()->name ) }}</a>
                                         <ul class="dropdown-menu">
                                             <li><a href="{{ route('admin.dashboard') }}">Dashboard</a></li>
+                                            <li><a href="{{ route('admin.categories') }}">Category</a></li>
                                             <li><a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a></li>
                                             <form  id="logout-form" action="{{ route('logout') }}" method="POST">
                                                 @csrf 
@@ -182,7 +159,7 @@
                             </ul>
                         </li>
                         <li class="nav-item"><a class="nav-link" href="{{ route('shop') }}">Shop</a></li>
-                        <li class="nav-item"><a class="nav-link" href="{{ route('cart') }}">Cart</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{{ route('product.cart') }}">Cart</a></li>
                         <li class="nav-item"><a class="nav-link" href="{{ route('checkout') }}">Checkout</a></li>
                         
                         <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
@@ -196,7 +173,7 @@
                 <!-- Start Atribute Navigation -->
                 <div class="attr-nav">
                     <ul>
-                        <li class="search"><a href="#"><i class="fa fa-search"></i></a></li>
+                       
                         <li class="side-menu"><a href="#">
 						<i class="fa fa-shopping-bag"></i>
                             <span class="badge">3</span>
@@ -210,24 +187,17 @@
                 <a href="#" class="close-side"><i class="fa fa-times"></i></a>
                 <li class="cart-box">
                     <ul class="cart-list">
-                        <li>
-                            <a href="#" class="photo"><img src="images/img-pro-01.jpg" class="cart-thumb" alt="" /></a>
-                            <h6><a href="#">Delica omtantur </a></h6>
-                            <p>1x - <span class="price">$80.00</span></p>
-                        </li>
-                        <li>
-                            <a href="#" class="photo"><img src="images/img-pro-02.jpg" class="cart-thumb" alt="" /></a>
-                            <h6><a href="#">Omnes ocurreret</a></h6>
-                            <p>1x - <span class="price">$60.00</span></p>
-                        </li>
-                        <li>
-                            <a href="#" class="photo"><img src="images/img-pro-03.jpg" class="cart-thumb" alt="" /></a>
-                            <h6><a href="#">Agam facilisis</a></h6>
-                            <p>1x - <span class="price">$40.00</span></p>
-                        </li>
+                        @foreach (Cart::content() as $item )
+                            <li>
+                                <a href="{{ route('product.details',['slug'=>$item->model->slug]) }}" class="photo"><img src="{{asset('assets/images')}}/{{ $item->model->image }}"  class="cart-thumb" alt="" /></a>
+                                <h6><a href="{{ route('product.details',['slug'=>$item->model->slug]) }}">{{ $item->model->name }}</a></h6>
+                                <p>{{ $item->qty }}x - <span class="price">₦{{ number_format($item->model->regular_price) }}</span></p>
+                            </li>
+                            
+                        @endforeach
                         <li class="total">
-                            <a href="#" class="btn btn-default hvr-hover btn-cart">VIEW CART</a>
-                            <span class="float-right"><strong>Total</strong>: $180.00</span>
+                            <a href="{{ route('product.cart') }}" class="btn btn-default hvr-hover btn-cart">VIEW CART</a>
+                            <span class="float-right"><strong>Total</strong>₦ {{Cart::total()}} </span>
                         </li>
                     </ul>
                 </li>
@@ -238,17 +208,6 @@
     </header>
     <!-- End Main Top -->
 
-    <!-- Start Top Search -->
-    <div class="top-search">
-        <div class="container">
-            <div class="input-group">
-                <span class="input-group-addon"><i class="fa fa-search"></i></span>
-                <input type="text" class="form-control" placeholder="Search">
-                <span class="input-group-addon close-search"><i class="fa fa-times"></i></span>
-            </div>
-        </div>
-    </div>
-    <!-- End Top Search -->
 
     {{ $slot }}
 

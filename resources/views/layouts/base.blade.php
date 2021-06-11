@@ -81,6 +81,7 @@
                                         <a href="#" class="nav-link dropdown-toggle arrow" data-toggle="dropdown" style="color: white !important">{{ Str::ucfirst(Auth::user()->name ) }}</a>
                                         <ul class="dropdown-menu">
                                             <li><a href="{{ route('admin.dashboard') }}">Dashboard</a></li>
+                                            <li><a href="{{ route('admin.categories') }}">Categories</a></li>
                                             <li><a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a></li>
                                             <form  id="logout-form" action="{{ route('logout') }}" method="POST">
                                                 @csrf 
@@ -171,7 +172,7 @@
                 <!-- Start Atribute Navigation -->
                 <div class="attr-nav">
                     <ul>
-                        <li class="search"><a href="#"><i class="fa fa-search"></i></a></li>
+                        
                         <li class="side-menu"><a href="#">
 						<i class="fa fa-shopping-bag"></i>
                              @if (Cart::count()>0)
@@ -210,17 +211,6 @@
     </header>
     <!-- End Main Top -->
 
-    <!-- Start Top Search -->
-    <div class="top-search">
-        <div class="container">
-            <div class="input-group">
-                <span class="input-group-addon"><i class="fa fa-search"></i></span>
-                <input type="text" class="form-control" placeholder="Search">
-                <span class="input-group-addon close-search"><i class="fa fa-times"></i></span>
-            </div>
-        </div>
-    </div>
-    <!-- End Top Search -->
 
     {{ $slot }}
 
