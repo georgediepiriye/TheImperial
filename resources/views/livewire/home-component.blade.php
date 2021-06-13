@@ -56,7 +56,7 @@
         <div class="row">
             <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
                 <div class="shop-cat-box">
-                    <img class="img-fluid" src="{{ asset('assets/images/sofa.jpg') }}" alt="" />
+                    <img class="img-fluid" src="{{ asset('assets/images/products/sofa.jpg') }}" alt="" />
                     <a class="btn hvr-hover" href="#">Sofa</a>
                 </div>
                 

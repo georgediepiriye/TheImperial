@@ -93,7 +93,7 @@
                                                    <div class="type-lb">
                                                        <p class="sale">Sale</p>
                                                    </div>
-                                                   <img src="{{asset('assets/images')}}/{{ $product->image }}" class="img-fluid" alt="Image">
+                                                   <img src="{{asset('assets/images/products/')}}/{{ $product->image }}" class="img-fluid" alt="Image">
                                                    <div class="mask-icon">
                                                        <ul>
                                                            <li><a href="{{ route('product.details',['slug'=>$product->slug]) }}" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>

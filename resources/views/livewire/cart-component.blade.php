@@ -30,7 +30,7 @@
                                     <tr>
                                         <td class="thumbnail-img">
                                             <a href="{{ route('product.details',['slug'=>$item->model->slug]) }}">
-                                                <img class="img-fluid" src="assets/images/{{ $item->model->image }}" alt="" />
+                                                <img class="img-fluid" src="assets/images/products/{{ $item->model->image }}" alt="" />
                                             </a>
                                         </td>
                                         <td class="name-pr">

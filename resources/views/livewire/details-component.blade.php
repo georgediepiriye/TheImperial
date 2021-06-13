@@ -80,7 +80,7 @@
                             <div class="item">
                                 <div class="products-single fix">
                                     <div class="box-img-hover">
-                                        <img src="{{asset('assets/images')}}/{{ $related_product->image }}" class="img-fluid" alt="Image">
+                                        <img src="{{asset('assets/images/products')}}/{{ $related_product->image }}" class="img-fluid" alt="Image">
                                         <div class="mask-icon">
                                             <ul>
                                                 <li><a href="{{ route('product.details',['slug'=>$related_product->slug]) }}" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>

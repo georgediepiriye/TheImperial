@@ -18,10 +18,10 @@
                                 All Products
 
                             </div>
-                            {{-- <div class="col-md-6" style="text-align: right;">
-                                <a href="{{ route('admin.addproducts') }}" class="btn btn-success pull-right">Add New</a>
+                            <div class="col-md-6" style="text-align: right;">
+                                <a href="{{ route('admin.addproduct') }}" class="btn btn-success pull-right">Add New</a>
 
-                            </div> --}}
+                            </div>
 
                         </div>
                        
@@ -53,7 +53,7 @@
                                     
                                         <td>{{ $product->id }}</td>
                                         <td>{{ $product->name}}</td>
-                                        <td><img src="{{asset('assets/images')}}/{{ $product->image }}" alt="Image" width='60'></td>
+                                        <td><img src="{{asset('assets/images/products')}}/{{ $product->image }}" alt="Image" width='60'></td>
                                         <td>{{ $product->stock_status}}</td>
                                         <td>{{ $product->regular_price}}</td> 
                                         <td>{{ $product->category->name}}</td> 
