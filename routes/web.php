@@ -62,6 +62,6 @@ Route::middleware(['auth:sanctum', 'verified','authAdmin'])->group(function(){
 
     Route::get('/admin/homeslider',AdminHomeSliderComponent::class)->name('admin.homeslider');
     Route::get('/admin/homeslider/add',AdminAddHomeSliderComponent::class)->name('admin.addhomeslider');
-    Route::get('/admin/homeslider/edit/{homeslider_id}',AdminEditHomeSliderComponent::class)->name('admin.edithomeslider');
+    Route::get('/admin/homeslider/edit/{slider_id}',AdminEditHomeSliderComponent::class)->name('admin.edithomeslider');
 
 });
