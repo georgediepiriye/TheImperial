@@ -83,6 +83,7 @@
                                             <li><a href="{{ route('admin.dashboard') }}">Dashboard</a></li>
                                             <li><a href="{{ route('admin.categories') }}">Categories</a></li>
                                             <li><a href="{{ route('admin.products') }}">All Products</a></li>
+                                            <li><a href="{{ route('admin.homeslider') }}">Manage Home Slidder</a></li>
                                             <li><a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a></li>
                                             <form  id="logout-form" action="{{ route('logout') }}" method="POST">
                                                 @csrf 

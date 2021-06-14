@@ -9,7 +9,7 @@
                     <div class="col-md-12">
                         <h1 class="m-b-20"><strong>Welcome To <br> The Imperial</strong></h1>
                         <p class="m-b-40">Where designs meet comfort...</p>
-                        <p><a class="btn hvr-hover" href="#">Shop Now</a></p>
+                        <p><a class="btn hvr-hover" href="{{ route('shop') }}">Shop Now</a></p>
                     </div>
                 </div>
             </div>
@@ -21,7 +21,7 @@
                     <div class="col-md-12">
                         <h1 class="m-b-20"><strong>Welcome To <br> The Imperial</strong></h1>
                         <p class="m-b-40">Where designs meet comfort....</p>
-                        <p><a class="btn hvr-hover" href="#">Shop Now</a></p>
+                        <p><a class="btn hvr-hover" href="{{ route('shop') }}">Shop Now</a></p>
                     </div>
                 </div>
             </div>
@@ -33,7 +33,7 @@
                     <div class="col-md-12">
                         <h1 class="m-b-20"><strong>Welcome To <br> The Imperial</strong></h1>
                         <p class="m-b-40">Where designs meet comfort...</p>
-                        <p><a class="btn hvr-hover" href="#">Shop Now</a></p>
+                        <p><a class="btn hvr-hover" href="{{ route('shop') }}">Shop Now</a></p>
                     </div>
                 </div>
             </div>
@@ -56,7 +56,7 @@
         <div class="row">
             <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
                 <div class="shop-cat-box">
-                    <img class="img-fluid" src="{{ asset('assets/images/products/sofa.jpg') }}" alt="" />
+                    <img class="img-fluid" src="{{ asset('assets/images/sofa.jpg') }}" alt="" />
                     <a class="btn hvr-hover" href="#">Sofa</a>
                 </div>
                 
@@ -76,14 +76,14 @@
                 </div>
               
             </div>
-            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                 <div class="shop-cat-box">
                     <img class="img-fluid" src="{{ asset('assets/images/bed.jpg') }}" alt="" />
                     <a class="btn hvr-hover" href="#">Bed</a>
                 </div>
                
             </div>
-            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                 <div class="shop-cat-box">
                     <img class="img-fluid" src="{{ asset('assets/images/lightening.jpg') }}" alt="" />
                     <a class="btn hvr-hover" href="#">Lightening</a>
