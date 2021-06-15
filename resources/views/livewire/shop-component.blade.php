@@ -42,18 +42,7 @@
                             
                              
                     </div>
-                    <div class="filter-price-left">
-                        <div class="title-left">
-                            <h3>Price</h3>
-                        </div>
-                        <div class="price-box-slider">
-                            <div id="slider-range"></div>
-                            <p>
-                                <input type="text" id="amount" readonly style="border:0; color:#fbb714; font-weight:bold;">
-                                <button class="btn hvr-hover" type="submit">Filter</button>
-                            </p>
-                        </div>
-                    </div>
+              
                    
 
                 </div>
@@ -94,7 +83,7 @@
                                                 <div class="type-lb">
                                                     <p class="sale">Sale</p>
                                                 </div>
-                                                <img src="assets/images/products/{{ $product->image }}" class="img-fluid" alt="Image">
+                                                <img src="{{ asset('assets/images/products') }}/{{ $product->image }}" class="img-fluid" alt="Image">
                                                 <div class="mask-icon">
                                                     <ul>
                                                         <li><a href="{{ route('product.details',['slug'=>$product->slug]) }}" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
