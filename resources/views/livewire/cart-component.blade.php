@@ -12,7 +12,7 @@
                     
                 @endif
 
-                @if (Cart::count() > 0)
+                @if (Cart::instance('cart')->count() > 0)
                     <div class="table-main table-responsive">
                         <table class="table">
                             <thead>
@@ -26,7 +26,7 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach (Cart::content() as $item )
+                                @foreach (Cart::instance('cart')->content() as $item )
                                     <tr>
                                         <td class="thumbnail-img">
                                             <a href="{{ route('product.details',['slug'=>$item->model->slug]) }}">
@@ -98,14 +98,14 @@
                     <h3>Order summary</h3>
                     <div class="d-flex">
                         <h4>Sub Total</h4>
-                        <div class="ml-auto font-weight-bold">₦{{ Cart::subtotal() }} </div>
+                        <div class="ml-auto font-weight-bold">₦{{ Cart::instance('cart')->subtotal() }} </div>
                     </div>
                     
                     <hr class="my-1">
           
                     <div class="d-flex">
                         <h4>Tax</h4>
-                        <div class="ml-auto font-weight-bold"> ₦{{ Cart::tax() }}</div>
+                        <div class="ml-auto font-weight-bold"> ₦{{ Cart::instance('cart')->tax() }}</div>
                     </div>
                     <div class="d-flex">
                         <h4>Delivery Cost</h4>
@@ -114,7 +114,7 @@
                     <hr>
                     <div class="d-flex gr-total">
                         <h5>Grand Total</h5>
-                        <div class="ml-auto h5"> ₦ {{Cart::total()}} </div>
+                        <div class="ml-auto h5"> ₦ {{Cart::instance('cart')->total()}} </div>
                     </div>
                     <hr> </div>
             </div>

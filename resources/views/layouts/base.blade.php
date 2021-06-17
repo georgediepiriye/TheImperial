@@ -159,7 +159,13 @@
                                 <li><a href="{{ route('product.category','lightening') }}">Lightening</a></li>
                             </ul>
                         </li>
-                        <li class="nav-item"><a class="nav-link" href="{{ route('shop') }}">Shop</a></li>
+                        <li class="dropdown">
+                            <a href="{{ route('shop') }}" class="nav-link dropdown-toggle " data-toggle="dropdown">Shop</a>
+                            <ul class="dropdown-menu">
+                                <li><a href="{{ route('product.category','sofa') }}">Wishlist</a></li>
+                               
+                            </ul>
+                        </li>
                         <li class="nav-item"><a class="nav-link" href="{{ route('product.cart') }}">Cart</a></li>
                         <li class="nav-item"><a class="nav-link" href="{{ route('checkout') }}">Checkout</a></li>
                         
@@ -177,8 +183,8 @@
                         
                         <li class="side-menu"><a href="#">
 						<i class="fa fa-shopping-bag"></i>
-                             @if (Cart::count()>0)
-                                <span class="badge">{{ Cart::count() }}</span>
+                             @if (Cart::instance('cart')->count()>0)
+                                <span class="badge">{{ Cart::instance('cart')->count() }}</span>
                                  
                              @endif
                             

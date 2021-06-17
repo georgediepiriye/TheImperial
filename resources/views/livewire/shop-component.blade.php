@@ -75,6 +75,9 @@
                         <div class="tab-content">
                             <div role="tabpanel" class="tab-pane fade show active" id="grid-view">
                                 <div class="row">
+                                    @php
+                                        $wishitems = Cart::instance('wishlist')->content()->pluck('id');
+                                    @endphp
                                     @foreach ($products as $product)
                                  
                                     <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4">
@@ -83,13 +86,21 @@
                                                 <div class="type-lb">
                                                     <p class="sale">Sale</p>
                                                 </div>
-                                                <img src="{{ asset('assets/images/products') }}/{{ $product->image }}" class="img-fluid" alt="Image">
+                                                <img src="{{ asset('assets/images') }}/{{ $product->image }}" class="img-fluid" alt="Image">
                                                 <div class="mask-icon">
                                                     <ul>
                                                         <li><a href="{{ route('product.details',['slug'=>$product->slug]) }}" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
-                                                        <li><a href="#" data-toggle="tooltip" data-placement="right" title="Add to Wishlist"><i class="far fa-heart"></i></a></li>
+                                                        @if ($wishitems->contains($product->id))
+                                                            <li><a href="#"  class="fill-heart" data-toggle="tooltip" data-placement="right" title="Add to Wishlist"><i class="far fa-heart "></i></a></li>
+
+                                                        @else
+                                                             <li><a href="#" data-toggle="tooltip" data-placement="right" title="Add to Wishlist" wire:click.prevent="addToWishlist({{ $product->id}},'{{ $product->name }}',{{ $product->regular_price }})"><i class="far fa-heart"></i></a></li>
+                                                            
+                                                        @endif
+                                                       
                                                     </ul>
                                                     <a class="cart" href="#"  wire:click.prevent="store({{ $product->id}},'{{ $product->name }}',{{ $product->regular_price }})">Add to Cart</a>
+
                                                 </div>
                                             </div>
                                             <div class="why-text">

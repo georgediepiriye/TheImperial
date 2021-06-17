@@ -16,9 +16,15 @@ class ShopComponent extends Component{
     }
     //function to store product is cart
     public function store($product_id,$product_name,$product_price){
-        Cart::add($product_id,$product_name,1,$product_price)->associate('App\Models\Product');
+        Cart::instance('cart')->add($product_id,$product_name,1,$product_price)->associate('App\Models\Product');
         session()->flash('message','Item added Successfully!');
         return redirect()->route('product.cart');
+    }
+
+    public function addToWishlist($product_id,$product_name,$product_price){
+        Cart::instance('wishlist')->add($product_id,$product_name,1,$product_price)->associate('App\Models\Product');
+
+
     }
 
 
