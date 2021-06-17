@@ -91,7 +91,7 @@
                                                     <ul>
                                                         <li><a href="{{ route('product.details',['slug'=>$product->slug]) }}" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
                                                         @if ($wishitems->contains($product->id))
-                                                            <li><a href="#"  class="fill-heart" data-toggle="tooltip" data-placement="right" title="Add to Wishlist"><i class="far fa-heart "></i></a></li>
+                                                            <li><a href="#"  class="fill-heart" data-toggle="tooltip" data-placement="right" title="Add to Wishlist" wire:click.prevent="removeFromWishlist({{ $product->id }})"><i class="far fa-heart "></i></a></li>
 
                                                         @else
                                                              <li><a href="#" data-toggle="tooltip" data-placement="right" title="Add to Wishlist" wire:click.prevent="addToWishlist({{ $product->id}},'{{ $product->name }}',{{ $product->regular_price }})"><i class="far fa-heart"></i></a></li>

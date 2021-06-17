@@ -27,6 +27,16 @@ class ShopComponent extends Component{
 
     }
 
+    public function removeFromWishlist($product_id){
+        foreach(Cart::instance('wishlist') as $wishitem){
+            if($wishitem->id === $product_id){
+                Cart::instance('wishlist')->remove($wishitem->rowId);
+               return;
+            }
+
+        }
+    }
+
 
 
     use WithPagination;
