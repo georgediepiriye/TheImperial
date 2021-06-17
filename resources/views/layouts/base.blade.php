@@ -179,17 +179,11 @@
 
                 <!-- Start Atribute Navigation -->
                 <div class="attr-nav">
-                    <ul>
-                        
-                        <li class="side-menu"><a href="#">
-						<i class="fa fa-shopping-bag"></i>
-                             @if (Cart::instance('cart')->count()>0)
-                                <span class="badge">{{ Cart::instance('cart')->count() }}</span>
-                                 
-                             @endif
-                            
-					</a></li>
-                    </ul>
+                    
+
+
+
+                    @livewire('cart-count-component')
                 </div>
                 <!-- End Atribute Navigation -->
             </div>
