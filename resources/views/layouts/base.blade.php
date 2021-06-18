@@ -167,7 +167,7 @@
                             </ul>
                         </li>
                         <li class="nav-item"><a class="nav-link" href="{{ route('product.cart') }}">Cart</a></li>
-                        <li class="nav-item"><a class="nav-link" href="{{ route('checkout') }}">Checkout</a></li>
+                        
                         
                         <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
                        
