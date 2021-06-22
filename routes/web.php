@@ -37,7 +37,6 @@ use Illuminate\Support\Facades\Route;
  Route::get('/',HomeComponent::class);
  Route::get('/shop',ShopComponent::class)->name('shop');
  Route::get('/cart',CartComponent::class)->name('product.cart');
- Route::get('/checkout',CheckoutComponent::class)->name('checkout');
  Route::get('/product/{slug}',DetailsComponent::class)->name('product.details');
  Route::get('/product-category/{category_slug}',CategoryComponent::class)->name('product.category');
 
@@ -48,6 +47,8 @@ use Illuminate\Support\Facades\Route;
 //for user
 Route::middleware(['auth:sanctum', 'verified'])->group(function(){
     Route::get('/user/dashboard',UserDashboardComponent::class)->name('user.dashboard');
+    Route::get('/checkout',CheckoutComponent::class)->name('checkout');
+    Route::get('/thankyou',CheckoutComponent::class)->name('thankyou');
 
 });
 
